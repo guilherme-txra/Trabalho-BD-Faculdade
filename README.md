@@ -114,13 +114,76 @@ CREATE TABLE confeitaria_db.ITEM_PEDIDO (
     FOREIGN KEY (id_produto) REFERENCES confeitaria_db.PRODUTOS(id_produto)
 );
 ```
-## INSERÇÃO DE DADOS
+* **Criação de tabelas:**
+  
+  - Primeiro foi criado o schema `confeitaria_db`, e logo após montamos as tabelas usando `SERIAL` para o banco numerar os IDs sozinho. Em seguida, conectamos uma tabela na outra com as chaves estrangeiras e usamos regras como `NOT NULL` e `UNIQUE` para evitar cadastros em branco ou duplicados.
+
+### • INSERÇÃO DE DADOS
 
 #### Inserindo dados na tabela _CLIENTES_:
-<img width="776" height="658" alt="modelo-conceitual" align-itens="center" src="prints/insert-50-clientes.png" />
+<img width="776" height="658" alt="tabela-clientes" align-itens="center" src="prints/insert-50-clientes.png" />
 
 #### Inserindo dados na tabela _PRODUTOS_:
-<img width="776" height="658" alt="modelo-conceitual" align-itens="center" src="prints/insert-50-produtos.png" />
+<img width="776" height="658" alt="tabela-produtos" align-itens="center" src="prints/insert-50-produtos.png" />
 
 #### Inserindo dados na tabela _CLIENTE_TELEFONE_:
-<img width="776" height="658" alt="modelo-conceitual" align-itens="center" src="prints/insert-50-telefones.png" />
+<img width="776" height="658" alt="cliente-telefone" align-itens="center" src="prints/insert-50-telefones.png" />
+
+### Outras Tabelas
+<img width="776" height="858" alt="other-tables" align-itens="center" src="prints/other-tables.png" />
+
+* **Resultado:**
+  
+  <img width="776" height="658" alt="resultado" align-itens="center" src="prints/tabelas-criadas.png" />
+
+> Explicação do Script de Inserção (INSERT):
+> Utilizei a técnica de Insert Múltiplo (passando várias linhas no VALUES) para salvar os 50 registros de uma vez só. Isso deixa o código menor e a execução muito mais rápida.
+
+---
+
+## CRUD
+* **C** (Create)
+  
+  <img width="576" height="458" alt="create" align-itens="center" src="prints/(c)create.png" />
+  
+* **R** (Read)
+  
+  <img width="576" height="458" alt="read" align-itens="center" src="prints/(u)update.png" />
+  
+* **U** (Update)
+  
+  <img width="576" height="458" alt="update" align-itens="center" src="prints/(r)read.png" />
+  
+* **D** (Delete)
+  
+  <img width="576" height="458" alt="delete" align-itens="center" src="prints/(d)delete.png" />
+
+---
+
+## RELATÓRIOS (CONSULTAS SQL)
+
+  - **CONSULTA 01**
+
+    <img width="576" height="458" alt="consultas" align-itens="center" src="prints/consulta-01.png" />
+
+  - **CONSULTA 02**
+
+    <img width="576" height="458" alt="consultas" align-itens="center" src="prints/consulta-02.png" />
+
+  - **CONSULTA 03**
+
+    <img width="576" height="458" alt="consultas" align-itens="center" src="prints/consulta-03.png" />
+
+  - **CONSULTA 04**
+
+    <img width="576" height="458" alt="consultas" align-itens="center" src="prints/consulta-04.png" />
+
+  - **CONSULTA 05**
+
+    <img width="576" height="458" alt="consultas" align-itens="center" src="prints/consulta-05.png" />
+
+  - **OUTRAS CONSULTAS**
+
+    <img width="776" height="658" alt="consultas" align-itens="center" src="prints/outras-consultas.png" />
+
+> *Nos relatórios, utilizei o comando `JOIN` para juntar as informações que estavam espalhadas em tabelas diferentes, conectando elas pelos IDs. Depois, apliquei o `WHERE` para filtrar só o que eu queria ver (ex: só vendas no PIX) e o `ORDER BY` para organizar a lista final, deixando tudo em ordem alfabética ou por data.*
